@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+
+  /* Spec colors */
+  --color-primary-brand: #8d4e2a;           /* Tangerine Dream */
+  --color-primary-container: #ffac81;       /* Light Tangerine */
+  --color-secondary-brand: #9a433f;         /* Sweet Salmon */
+  --color-secondary-container: #ff928b;
+  --color-tertiary-brand: #4c6544;          /* Tea Green */
+  --color-tertiary-container: #acc8a0;
+  --color-custard: #fffadf;                  /* Vanilla Custard */
+  --color-peach-fuzz: #fec3a6;               /* Sub-surface / Peach Fuzz */
+  --color-clay-outline: #86736b;            /* Outline */
+  --color-clay-variant: #d8c2b8;            /* Outline Variant */
+  --color-dark-charcoal: #1e1c00;           /* On-Surface */
+  --color-muted-coffee: #53433c;            /* On-Surface Variant */
+
+  /* UI specific tokens mapping */
+  --color-tiles-bg: #fffadf;
+  --color-tiles-text: #1e1c00;
+  --color-tiles-card: #fdfae7;
+  --color-tiles-card-filled: #ffffff;
+}
+
+@layer utilities {
+  .tile-shadow {
+    box-shadow: 0 4px 14px rgba(141, 78, 42, 0.08);
+  }
+
+  .glass-overlay {
+    background: rgba(255, 250, 223, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.015;
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJauDF0y1uUm60oHMorUg2BZAN7FBTBiQKB9lQXeOVYRcT1PZ9Uh54EFuR_6a9LChTl2Dp0_IOJaUTEkzO_PLOjW8GFVPLbpY4CbiEpRSMXlQSmK8GokJrNGsNbZvAHwjhYvROUxIG3_D_ogJc-UdCeF8hRMn4FT9kKUZFaK9xM42TF3KobvHG_tguKflcvMFweIM27794PKT30eE3wrRlBl-1BPFXs8fKd6m46NlVM5aZQBmtYHBhf9-kactOSptaN_o057Fv_qy_");
+  }
+
+  .dashed-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px dashed #8d4e2a;
+    border-radius: 20px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .font-fill-1 {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-custard);
+  color: var(--color-dark-charcoal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffac81;
+  border-radius: 10px;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Tiles",
+  "description": "A soft, calendar-first social memory app where you post one tiny moment each day and relive life as a visual mosaic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
